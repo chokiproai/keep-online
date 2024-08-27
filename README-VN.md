@@ -46,4 +46,4 @@ MIT © [LICENSE](./LICENSE).
 
 <!-- LINK -->
 [deploy-button-image]: https://img.shields.io/badge/Run_on_Repl.it-grey?logo=replit&size=large
-[deploy-link]: https://repl.it/chokiproai/keep-online
+[deploy-link]: https://replit.com/login?source=%2Fgithub%2F*&goto=%2Fnew%2F%3FgithubRepo%3Dchokiproai%2Fkeep-online
