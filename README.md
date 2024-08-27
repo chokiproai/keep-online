@@ -1,5 +1,3 @@
-**English** · [Vietnamese](./README-VN.md)
-
 <div align="center">
     <a name="readme-top"></a>
 
