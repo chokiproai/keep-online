@@ -5,9 +5,8 @@
 
 **English** · [Vietnamese](./README-VN.md)
 
-### Deploying with Replit
 
-|           Deploy with Replit            |     
+|         Deploy with HuggingFace         |     
 | :-------------------------------------: |   
 | [![][deploy-button-image]][deploy-link] |
 
@@ -46,5 +45,5 @@ MIT © [LICENSE](./LICENSE).
 </div>
 
 <!-- LINK -->
-[deploy-button-image]: https://img.shields.io/badge/Run_on_Repl.it-grey?logo=replit&size=large
-[deploy-link]: https://replit.com/login?source=%2Fgithub%2F*&goto=%2Fnew%2F%3FgithubRepo%3Dchokiproai%2Fkeep-online
+[deploy-button-image]: https://cdn-uploads.huggingface.co/production/uploads/65c33f0aa592fce762eed505/qpm9eCvzXeXp-3tKJVSqs.png
+[deploy-link]: https://huggingface.co/spaces/ngoctuanai/keep-online?duplicate=true
