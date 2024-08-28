@@ -31,7 +31,7 @@
 
 4. URLs pause access from 00:00 to 06:00
 
-- In index.js, from line 23 to 26, the URLs are defined in the websites array, used for scheduled access. These URLs will pause access from 00:00 to 06:00. During this time, the application will not make any requests to the URLs in the websites array. At other times of the day, these URLs will be accessed normally. The access cycle for these URLs is also 2 minutes (120 seconds), and you can adjust it according to your needs by changing the parameter in the setInterval function on line 51.
+- In index.js, from line 23 to 26, the URLs are defined in the websites array, used for scheduled access. These URLs will pause access from 00:00 to 06:00. During this time, the application will not make any requests to the URLs in the websites array. At other times of the day, these URLs will be accessed normally. The access cycle for these URLs is also 3 minutes (180 seconds), and you can adjust it according to your needs by changing the parameter in the setInterval function on line 49.
 
 ## Application Platform
 

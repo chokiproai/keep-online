@@ -46,13 +46,16 @@ const checkAndSetTimer = () => {
 };
 
 let visitIntervalId;
+const visitIntervalTime = 3 * 60 * 1000; // Time interval for visiting websites (3 minutes)
+
 const startVisits = () => {
   clearInterval(visitIntervalId);
-  visitIntervalId = setInterval(visitWebsites, 2 * 60 * 1000); // Perform access every 2 minutes
+  visitIntervalId = setInterval(visitWebsites, visitIntervalTime); // Perform access every 3 minutes
 };
 
 const runScript = () => {
-  setInterval(checkAndSetTimer, 2 * 60 * 1000); // Check every 2 minutes
+  // Check every 3 minutes
+  setInterval(checkAndSetTimer, visitIntervalTime);
 };
 
 // Continuous 24-hour access

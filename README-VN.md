@@ -30,7 +30,7 @@
 
 4. URL tạm dừng truy cập từ 00:00 đến 06:00
 
-- Trong index.js, từ dòng 23 đến 26 là các URL được định nghĩa trong mảng websites, dùng để truy cập theo lịch trình. Các URL này sẽ tạm dừng truy cập từ 00:00 đến 06:00. Trong khoảng thời gian này, ứng dụng sẽ không thực hiện bất kỳ yêu cầu nào đến các URL trong mảng websites. Các thời gian khác trong ngày, các URL này sẽ được truy cập bình thường. Chu kỳ truy cập cho các URL này cũng là 2 phút (120 giây), và bạn có thể điều chỉnh theo nhu cầu của mình bằng cách thay đổi tham số trong hàm setInterval ở dòng 51.
+- Trong index.js, từ dòng 23 đến 26 là các URL được định nghĩa trong mảng websites, dùng để truy cập theo lịch trình. Các URL này sẽ tạm dừng truy cập từ 00:00 đến 06:00. Trong khoảng thời gian này, ứng dụng sẽ không thực hiện bất kỳ yêu cầu nào đến các URL trong mảng websites. Các thời gian khác trong ngày, các URL này sẽ được truy cập bình thường. Chu kỳ truy cập cho các URL này cũng là 3 phút (180 giây), và bạn có thể điều chỉnh theo nhu cầu của mình bằng cách thay đổi tham số trong hàm setInterval ở dòng 49.
 
 ## Nền tảng áp dụng
 
