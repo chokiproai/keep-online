@@ -5,7 +5,6 @@
 
 **English** · [Vietnamese](./README-VN.md)
 
-
 |         Deploy with HuggingFace         |     
 | :-------------------------------------: |   
 | [![][deploy-button-image]][deploy-link] |
@@ -36,7 +35,6 @@
 ## Application Platform
 
 - Supports unlimited Node.js deployment. Does not support physical containers that are inactive.
-
 
 ## LICENSE
 

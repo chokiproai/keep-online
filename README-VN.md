@@ -3,9 +3,9 @@
 
 # Keep online
 
-**Vietnamese** · [English](./README.md)
+**Tiếng Việt** · [Tiếng Anh](./README.md)
 
-|        Deploy with HuggingFace          |     
+|       Triển khai với HuggingFace        |     
 | :-------------------------------------: |   
 | [![][deploy-button-image]][deploy-link] |
 

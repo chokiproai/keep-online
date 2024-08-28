@@ -78,10 +78,10 @@ cron.schedule('*/2 * * * *', () => {
 const server = http.createServer((req, res) => {
   if (req.url === '/') {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello, World!\n');
+    res.end('Keep Online! - github.com/chokiproai/keep-online\n');
   } else {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
-    res.end('Not Found\n');
+    res.end('Not Found! - github.com/chokiproai/keep-online\n');
   }
 });
 
