@@ -26,11 +26,11 @@
 2. Tải lên các tệp `index.js` và `package.json` vào thư mục gốc của môi trường chạy.
 3. URL để truy cập liên tục 24 giờ
 
-- Trong index.js, URL được định nghĩa trong mảng urls, được sử dụng để truy cập liên tục trong suốt 24 giờ. Bạn có thể thêm nhiều URL hơn vào mảng này mà không giới hạn số lượng. Mỗi URL sẽ được truy cập theo chu kỳ, với khoảng thời gian mặc định là 3 phút (180 giây). Bạn có thể điều chỉnh chu kỳ này theo nhu cầu của mình bằng cách thay đổi tham số trong hàm setInterval ở dòng 70.
+- Trong index.js, URL được định nghĩa trong mảng urls, được sử dụng để truy cập liên tục trong suốt 24 giờ. Bạn có thể thêm nhiều URL hơn vào mảng này mà không giới hạn số lượng. Mỗi URL sẽ được truy cập theo chu kỳ, với khoảng thời gian mặc định là 3 phút (180 giây). Bạn có thể điều chỉnh chu kỳ này theo nhu cầu của mình bằng cách thay đổi tham số trong hàm setInterval ở dòng 86.
 
 4. URL tạm dừng truy cập từ 00:00 đến 06:00
 
-- Trong index.js, URL được định nghĩa trong mảng websites, được sử dụng để truy cập theo lịch trình. Các URL này sẽ tạm dừng truy cập từ 00:00 đến 06:00. Trong thời gian này, ứng dụng sẽ không thực hiện bất kỳ yêu cầu nào đến các URL trong mảng websites. Vào các thời điểm khác trong ngày, các URL này sẽ được truy cập bình thường. Chu kỳ truy cập cho các URL này cũng là 3 phút (180 giây) và bạn có thể điều chỉnh theo nhu cầu của mình bằng cách thay đổi tham số trong hàm setInterval ở dòng 74.
+- Trong index.js, URL được định nghĩa trong mảng websites, được sử dụng để truy cập theo lịch trình. Các URL này sẽ tạm dừng truy cập từ 00:00 đến 06:00. Trong thời gian này, ứng dụng sẽ không thực hiện bất kỳ yêu cầu nào đến các URL trong mảng websites. Vào các thời điểm khác trong ngày, các URL này sẽ được truy cập bình thường. Chu kỳ truy cập cho các URL này cũng là 3 phút (180 giây) và bạn có thể điều chỉnh theo nhu cầu của mình bằng cách thay đổi tham số trong hàm setInterval ở dòng 73.
 
 ## Nền tảng áp dụng
 
