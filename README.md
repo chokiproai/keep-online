@@ -24,13 +24,13 @@
 
 1. Run on a container or VPS with a Node.js environment (Node.js environment needs to be installed manually).
 2. Upload the `index.js` and `package.json` files to the root directory of the running environment.
-3. URL for continuous access 24 hours
+3. URLs for 24-hour continuous access
 
-- In index.js, from line 10 to 14, the URLs are defined in the urls array, used for continuous access throughout 24 hours. You can add more URLs to this array without any limit on the number. Each URL will be accessed in cycles, with a default of 2 minutes (120 seconds), but you can adjust this cycle according to your needs by changing the parameter in the setInterval function on line 69.
+- In index.js, URLs are defined in the urls array, which is used for continuous access during 24 hours. You can add more URLs to this array without any limit. Each URL will be accessed periodically, with a default interval of 3 minutes (180 seconds). You can adjust this cycle according to your needs by changing the parameter in the setInterval function on line 70.
 
-4. URLs pause access from 00:00 to 06:00
+4. URLs for 00:00 to 06:00 pause
 
-- In index.js, from line 23 to 26, the URLs are defined in the websites array, used for scheduled access. These URLs will pause access from 00:00 to 06:00. During this time, the application will not make any requests to the URLs in the websites array. At other times of the day, these URLs will be accessed normally. The access cycle for these URLs is also 3 minutes (180 seconds), and you can adjust it according to your needs by changing the parameter in the setInterval function on line 49.
+- In index.js, URLs are defined in the websites array, which is used for scheduled access. These URLs will be paused from 00:00 to 06:00. During this time, the application will not make any requests to the URLs in the websites array. At other times of the day, these URLs will be accessed normally. The access cycle for these URLs is also 3 minutes (180 seconds) and you can adjust it to your needs by changing the parameter in the setInterval function on line 74.
 
 ## Application Platform
 
