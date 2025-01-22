@@ -26,11 +26,11 @@
 2. Upload the `index.js` and `package.json` files to the root directory of the running environment.
 3. URLs for 24-hour continuous access
 
-- In index.js, URLs are defined in the urls array, which is used for continuous access during 24 hours. You can add more URLs to this array without any limit. Each URL will be accessed periodically, with a default interval of 3 minutes (180 seconds). You can adjust this cycle according to your needs by changing the parameter in the setInterval function on line 70.
+- In index.js, URLs are defined in the urls array, which is used for continuous access during 24 hours. You can add more URLs to this array without any limit. Each URL will be accessed periodically, with a default interval of 3 minutes (180 seconds). You can adjust this cycle according to your needs by changing the parameter in the setInterval function on line 86.
 
 4. URLs for 00:00 to 06:00 pause
 
-- In index.js, URLs are defined in the websites array, which is used for scheduled access. These URLs will be paused from 00:00 to 06:00. During this time, the application will not make any requests to the URLs in the websites array. At other times of the day, these URLs will be accessed normally. The access cycle for these URLs is also 3 minutes (180 seconds) and you can adjust it to your needs by changing the parameter in the setInterval function on line 74.
+- In index.js, URLs are defined in the websites array, which is used for scheduled access. These URLs will be paused from 00:00 to 06:00. During this time, the application will not make any requests to the URLs in the websites array. At other times of the day, these URLs will be accessed normally. The access cycle for these URLs is also 3 minutes (180 seconds) and you can adjust it to your needs by changing the parameter in the setInterval function on line 73.
 
 ## Application Platform
 
