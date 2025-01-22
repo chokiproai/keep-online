@@ -83,7 +83,7 @@ const runScript = () => {
 };
 
 // Continuous 24-hour access
-cron.schedule('*/2 * * * *', () => {
+cron.schedule('*/3 * * * *', () => {
   console.log('Performing website access...');
   urls.forEach(scrapeAndLog);
 });
