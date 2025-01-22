@@ -1,11 +1,12 @@
-const puppeteer = require('puppeteer');
 const axios = require('axios');
 const http = require('http');
 const cron = require('node-cron');
 const moment = require('moment-timezone');
+const { CookieJar } = require('tough-cookie');
+const { wrapper } = require('axios-cookiejar-support');
 require('dotenv').config(); // Load environment variables from .env file
 
-const port = process.env.PORT || 7860;
+const port = process.env.PORT;
 const timezone = process.env.Timezone
 
 // Array of URLs for 24-hour access
@@ -20,48 +21,37 @@ const websites = [
   // Add more URLs for scheduled access
 ];
 
-// Function to get dynamic headers and cookies using Puppeteer
-const getDynamicHeaders = async (url) => {
-  const browser = await puppeteer.launch({ headless: true }); // Launch Puppeteer in headless mode
-  const page = await browser.newPage();
+// Initialize axios with cookie support
+const cookieJar = new CookieJar();
+const client = wrapper(axios.create({ jar: cookieJar }));
 
-  // Navigate to the URL
-  await page.goto(url, { waitUntil: 'networkidle2' });
-
-  // Extract headers
-  const headers = {
-    'User-Agent': await page.evaluate(() => navigator.userAgent),
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
-    'Accept-Language': 'en-US,en;q=0.9',
-    'Connection': 'keep-alive',
-  };
-
-  // Extract cookies
-  const cookies = await page.cookies();
-  const cookieString = cookies.map(cookie => `${cookie.name}=${cookie.value}`).join('; ');
-
-  headers['Cookie'] = cookieString;
-
-  await browser.close();
-  return headers;
-};
-
-// Function to visit websites with dynamic headers
+// Function to visit websites with dynamic headers and cookies
 const visitWebsites = async () => {
   for (const url of websites) {
     try {
-      // Get dynamic headers
-      const headers = await getDynamicHeaders(url);
-
-      // Make the HTTP request using axios
-      const response = await axios.get(url, {
-        headers: headers,
-        withCredentials: true,
-      });
+      const response = await client.get(url);
+      const headers = response.headers;
+      const cookies = cookieJar.getCookiesSync(url);
       console.log(`${moment().tz(timezone).format('YYYY-MM-DD HH:mm:ss')} Successfully visited: ${url} - Status code: ${response.status}`);
+      console.log(`Headers:`, headers);
+      console.log(`Cookies:`, cookies);
     } catch (error) {
       console.error(`Error visiting ${url}: ${error.message}`);
     }
+  }
+};
+
+// Function to scrape and log with dynamic headers and cookies
+const scrapeAndLog = async (url) => {
+  try {
+    const response = await client.get(url);
+    const headers = response.headers;
+    const cookies = cookieJar.getCookiesSync(url);
+    console.log(`${moment().tz(timezone).format('YYYY-MM-DD HH:mm:ss')} Successfully visited: ${url} - Status code: ${response.status}`);
+    console.log(`Headers:`, headers);
+    console.log(`Cookies:`, cookies);
+  } catch (error) {
+    console.error(`${moment().tz(timezone).format('YYYY-MM-DD HH:mm:ss')}: Error visiting web: ${url}: ${error.message}`);
   }
 };
 
@@ -93,17 +83,9 @@ const runScript = () => {
 };
 
 // Continuous 24-hour access
-cron.schedule('*/2 * * * *', async () => {
+cron.schedule('*/2 * * * *', () => {
   console.log('Performing website access...');
-  for (const url of urls) {
-    try {
-      const headers = await getDynamicHeaders(url);
-      const response = await axios.get(url, { headers, withCredentials: true });
-      console.log(`${moment().tz(timezone).format('YYYY-MM-DD HH:mm:ss')} Successfully visited: ${url} - Status code: ${response.status}`);
-    } catch (error) {
-      console.error(`${moment().tz(timezone).format('YYYY-MM-DD HH:mm:ss')}: Error visiting web: ${url}: ${error.message}`);
-    }
-  }
+  urls.forEach(scrapeAndLog);
 });
 
 // Create HTTP service
