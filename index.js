@@ -33,8 +33,6 @@ const visitWebsites = async () => {
       const headers = response.headers;
       const cookies = cookieJar.getCookiesSync(url);
       console.log(`${moment().tz(timezone).format('YYYY-MM-DD HH:mm:ss')} Successfully visited: ${url} - Status code: ${response.status}`);
-      console.log(`Headers:`, headers);
-      console.log(`Cookies:`, cookies);
     } catch (error) {
       console.error(`Error visiting ${url}: ${error.message}`);
     }
@@ -48,8 +46,6 @@ const scrapeAndLog = async (url) => {
     const headers = response.headers;
     const cookies = cookieJar.getCookiesSync(url);
     console.log(`${moment().tz(timezone).format('YYYY-MM-DD HH:mm:ss')} Successfully visited: ${url} - Status code: ${response.status}`);
-    console.log(`Headers:`, headers);
-    console.log(`Cookies:`, cookies);
   } catch (error) {
     console.error(`${moment().tz(timezone).format('YYYY-MM-DD HH:mm:ss')}: Error visiting web: ${url}: ${error.message}`);
   }
